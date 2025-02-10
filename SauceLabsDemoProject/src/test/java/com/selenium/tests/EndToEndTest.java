@@ -4,6 +4,7 @@ package com.selenium.tests;
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.selenium.base.BaseTest;
@@ -12,6 +13,7 @@ import com.selenium.pages.LoginPage;
 import com.selenium.pages.ProductPage;
 import com.selenium.utils.ExcelUtils;
 
+@Listeners(com.selenium.tests.ExtentReportListener.class)
 public class EndToEndTest extends BaseTest {
 
     @Test(dataProvider = "loginData")

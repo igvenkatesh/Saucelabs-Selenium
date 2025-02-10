@@ -15,7 +15,7 @@ public class ProductPage {
     }
 
     public boolean isProductPageDisplayed() {
-        return driver.findElement(productTitle).getText().equals("Products");
+        return driver.findElement(productTitle).getText().equals("Products1");
     }
 
     public void addItemToCart() {

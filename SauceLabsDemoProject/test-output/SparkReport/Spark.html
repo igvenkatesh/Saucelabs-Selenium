@@ -43,12 +43,12 @@
         <ul class="nav-right">
           <li class="m-r-10">
             <a href="#">
-              <span class="badge badge-primary">ExtentReports</span>
+              <span class="badge badge-primary">ExtentReports - TestNG Adapter Example</span>
             </a>
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Feb 7, 2025 10:39:20 am</span>
+                    <span class="badge badge-primary">Feb 08, 2025 22:16:49</span>
                 </a>
             </li>
         </ul>
@@ -64,7 +64,15 @@
           <span class="title">Tests</span>
         </a>
       </li>
-            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+            <li class="nav-item dropdown" onclick="toggleView('exception-view')">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
         <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
           <span class="icon-holder">
             <i class="fa fa-bar-chart"></i>
@@ -92,8 +100,8 @@
 					<i class="fa fa-exclamation-circle"></i>
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
 						
+						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
 						
 						
 						
@@ -106,28 +114,28 @@
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="pass" test-id="1"
+				<li class="test-item"  status="fail" test-id="2"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
+					<div class="status-avatar fail-bg">
+						<i class="fa fa-times text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">EndToEndTest</p>
-							<p class="duration text-sm">0h 0m 5s+796ms</p>
-							<span class="datetime">10:39:23 am</span>
+							<p class="duration text-sm">0h 0m 1s+907ms</p>
+							<span class="datetime">22:16:50 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">EndToEndTest</h5>
-									<span class='badge badge-success'>02.07.2025 10:39:23</span>
-									<span class='badge badge-danger'>02.07.2025 10:39:29</span>
-									<span class='badge badge-default'>0h 0m 5s+796ms</span>
+									<h5 class="test-status text-fail">EndToEndTest</h5>
+									<span class='badge badge-success'>02.08.2025 22:16:50</span>
+									<span class='badge badge-danger'>02.08.2025 22:16:52</span>
+									<span class='badge badge-default'>0h 0m 1s+907ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -140,9 +148,12 @@
 				<div class="card-header" role="tab">
 					<div class="card-title">
 						<div class="node">endToEndTest</div>
-						<div class="status-avatar float-right pass-bg">
-						    <i class="fa fa-check text-white"></i>
+						<div class="status-avatar float-right fail-bg">
+						    <i class="fa fa-times text-white"></i>
 						</div>
+							<div class="status-avatar float-right">
+								<i class="fa fa-paperclip"></i>
+							</div>
 					</div>
 				</div>
 				<div class="collapse">
@@ -154,9 +165,12 @@
 				<div class="card-header" role="tab">
 					<div class="card-title">
 						<div class="node">[standard_user, secret_sauce, John, Doe]</div>
-						<div class="status-avatar float-right pass-bg">
-						    <i class="fa fa-check text-white"></i>
+						<div class="status-avatar float-right fail-bg">
+						    <i class="fa fa-times text-white"></i>
 						</div>
+							<div class="status-avatar float-right">
+								<i class="fa fa-paperclip"></i>
+							</div>
 					</div>
 				</div>
 				<div class="collapse">
@@ -169,10 +183,48 @@
 	</tr></thead>
 	<tbody>
 			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:39:29 am</td>
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>10:16:52 pm</td>
 				<td>
-						Test passed
+						<textarea disabled class="code-block">java.lang.AssertionError
+	at com.selenium.tests.EndToEndTest.endToEndTest(EndToEndTest.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>10:16:52 pm</td>
+				<td>
+						ITestResult.FAILURE, event afterMethod
+						<a href='data:image/png;base64,base64String' data-featherlight='image'><span class='label grey badge white-text text-white'>base64-img</span></a>
 				</td>
 			</tr>
 	</tbody>
@@ -184,6 +236,81 @@
 			</div>
 	</div>
 </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row exception-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Exception</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">java.lang.AssertionError</p>
+							<p class="duration text-sm">1 tests</p>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>java.lang.AssertionError</h4>
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>22:16:50 pm</td>
+									<td class='linked' test-id='4'>
+										[standard_user, secret_sauce, John, Doe]
+										<div class="">
+											<span class="badge badge-default">endToEndTest</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</li>
 			</ul>
@@ -217,12 +344,12 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'>
-						<b>1</b> class passed
+					<div><small data-tooltip='0%'>
+						<b>0</b> class passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> class failed, 
+						<small data-tooltip='100%'><b>1</b> class failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -240,9 +367,9 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>1</b> methods passed</small></div>
+					<div><small data-tooltip='0%'><b>0</b> methods passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> methods failed, 
+						<small data-tooltip='100%'><b>1</b> methods failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -260,9 +387,9 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>1</b> events passed</small></div>
+					<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> events failed, 
+						<small data-tooltip='100%'><b>2</b> events failed, 
 						<b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -280,7 +407,7 @@
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -299,7 +426,7 @@
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -315,7 +442,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Feb 7, 2025 10:39:20 am</h4>
+							<h4 class="font-weight-light mt-4">Feb 08, 2025 22:16:49</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -331,7 +458,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 8s+842ms</h4>
+							<h4 class="font-weight-light mt-4">0h 0m 2s+755ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -362,23 +489,23 @@
 <script>
 	var statusGroup = {
 	    parentCount: 1,
-		passParent: 1,
-		failParent: 0,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 0,
+		exceptionsParent: 1,
 		childCount: 1,
-		passChild: 1,
-		failChild: 0,
+		passChild: 0,
+		failChild: 1,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 0,
+		exceptionsChild: 1,
 		grandChildCount: 0,
 		passGrandChild: 0,
 		failGrandChild: 0,
@@ -389,9 +516,9 @@
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 1,
-		passEvents: 1,
-		failEvents: 0,
+		eventsCount: 2,
+		passEvents: 0,
+		failEvents: 2,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
@@ -403,7 +530,7 @@
 </script>
 <script>
 	var timeline = {
-	        "EndToEndTest":5.796
+	        "EndToEndTest":1.907
 	};
 </script>
                 </div>

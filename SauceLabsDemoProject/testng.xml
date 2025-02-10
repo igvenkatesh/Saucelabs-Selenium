@@ -3,9 +3,8 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test">
 		<listeners>
-			<listener
-				class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter" />
-		</listeners>
+  <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter" />
+</listeners>
 
 		<classes>
 			<class name="com.selenium.tests.EndToEndTest" />
